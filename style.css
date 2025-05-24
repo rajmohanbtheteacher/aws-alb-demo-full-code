@@ -1,0 +1,134 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #eef2f3, #d4d8dd);
+  text-align: center;
+  color: #333;
+}
+
+.title {
+  font-size: 2em;
+  margin: 30px 0;
+}
+
+.diagram {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row-top, .row-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  margin: 20px 0;
+}
+
+.instance, .alb {
+  width: 300px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  text-align: center;
+  z-index: 2;
+}
+
+img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.details {
+  font-size: 0.9em;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Dotted connection lines */
+.connector-down {
+  width: 2px;
+  height: 100px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    orange,
+    orange 5px,
+    transparent 5px,
+    transparent 10px
+  );
+  animation: dash 1s linear infinite;
+  position: absolute;
+  top: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.connector-branch {
+  position: absolute;
+  top: 240px;
+  width: 300px;
+  height: 2px;
+  background-image: repeating-linear-gradient(
+    to right,
+    #ff9900,
+    #ff9900 5px,
+    transparent 5px,
+    transparent 10px
+  );
+  animation: dash-horizontal 2s linear infinite;
+  z-index: 1;
+}
+
+.connector-left,
+.connector-right {
+  width: 2px;
+  height: 100px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #33c4ff,
+    #33c4ff 5px,
+    transparent 5px,
+    transparent 10px
+  );
+  animation: dash 1.2s linear infinite;
+  position: absolute;
+  top: 242px;
+  z-index: 1;
+}
+
+.connector-left {
+  left: calc(50% - 160px);
+}
+
+.connector-right {
+  left: calc(50% + 160px);
+}
+
+@keyframes dash {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 10px; }
+}
+
+@keyframes dash-horizontal {
+  0% { background-position: 0 0; }
+  100% { background-position: 10px 0; }
+}
