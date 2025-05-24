@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ALB to EC2 Instance Metadata Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="title">🚀 ALB to EC2 Instance Metadata Visualizer</div>
+
+  <div class="diagram">
+
+    <!-- ALB on top -->
+    <div class="row-top">
+      <div class="alb bounce">
+        <img src="assets/alb-icon.png" alt="ALB">
+        <div class="label">Application Load Balancer</div>
+      </div>
+    </div>
+
+    <!-- Vertical connector down -->
+    <div class="connector-down"></div>
+
+    <!-- Horizontal connector to left & right -->
+    <div class="connector-branch"></div>
+    <div class="connector-left"></div>
+    <div class="connector-right"></div>
+
+    <!-- EC2 instances on bottom row -->
+    <div class="row-bottom">
+      <div class="instance" id="ec2-1">
+        <img src="assets/ec2-icon.png" alt="EC2 Instance">
+        <div class="details" id="meta-1">Loading instance 1...</div>
+      </div>
+
+      <div class="instance" id="ec2-2">
+        <img src="assets/ec2-icon.png" alt="EC2 Instance">
+        <div class="details" id="meta-2">Loading instance 2...</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
